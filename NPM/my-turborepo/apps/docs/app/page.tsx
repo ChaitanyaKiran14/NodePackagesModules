@@ -1,9 +1,6 @@
-'use client';
-
 import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
-import dynamic from "next/dynamic";
 
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
@@ -12,7 +9,7 @@ type Props = Omit<ImageProps, "src"> & {
 
 const ThemeImage = (props: Props) => {
   const { srcLight, srcDark, ...rest } = props;
-  
+
   return (
     <>
       <Image {...rest} src={srcLight} className="imgLight" />
